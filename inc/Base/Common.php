@@ -6,7 +6,7 @@ class Common
 {
     const HO_PLUGIN_VERSION = '1.0.0';
 
-    const HO_PLUGIN_ID = 'ho-deepseek-translate-for-translatepress';
+    const HO_PLUGIN_ID = 'ho-deepseek-for-translatepress';
 
     public $plugin_path;
 

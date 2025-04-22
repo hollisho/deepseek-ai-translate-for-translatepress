@@ -1,7 +1,7 @@
 <?php
 namespace hollisho\translatepress\translate\deepseek\inc\Helpers;
 
-class YouDaoApiV2AuthHelper {
+class DeepSeekApiHelper {
 
     public static function convert(&$args)
     {

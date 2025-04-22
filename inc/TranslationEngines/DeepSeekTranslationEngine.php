@@ -1,17 +1,17 @@
 <?php
 namespace hollisho\translatepress\translate\deepseek\inc\TranslationEngines;
 
-use hollisho\translatepress\translate\deepseek\inc\Helpers\YouDaoApiV2AuthHelper;
+use hollisho\translatepress\translate\deepseek\inc\Helpers\DeepSeekApiHelper;
 use TRP_Machine_Translator;
 use WP_Error;
 
 /**
  * @author Hollis
  * @desc deepseek machine translation engine
- * Class YouDaoMachineTranslationEngine
+ * Class DeepSeekMachineTranslationEngine
  * @package hollisho\translatepress\translate\deepseek\inc\TranslationEngines
  */
-class YouDaoMachineTranslationEngine extends TRP_Machine_Translator
+class DeepSeekTranslationEngine extends TRP_Machine_Translator
 {
     const ENGINE_KEY = 'deepseek_translate';
 
@@ -30,7 +30,7 @@ class YouDaoMachineTranslationEngine extends TRP_Machine_Translator
     {
         /* build our translation request */
         list($app_key, $app_secret) = explode('#', $this->get_api_key());
-        $salt = YouDaoApiV2AuthHelper::create_guid();
+        $salt = DeepSeekApiHelper::create_guid();
         $args = array(
             'q' => $strings_array,
             'appKey' => $app_key,
@@ -41,11 +41,11 @@ class YouDaoMachineTranslationEngine extends TRP_Machine_Translator
         $args['signType'] = 'v3';
         $curtime = strtotime("now");
         $args['curtime'] = $curtime;
-        $signStr = $app_key . YouDaoApiV2AuthHelper::truncate(implode("", $strings_array)) . $salt . $curtime . $app_secret;
+        $signStr = $app_key . DeepSeekApiHelper::truncate(implode("", $strings_array)) . $salt . $curtime . $app_secret;
         $args['sign'] = hash("sha256", $signStr);
 //        $args['vocabId'] = 'your vocab id';
 
-        $data = YouDaoApiV2AuthHelper::convert($args);
+        $data = DeepSeekApiHelper::convert($args);
 
         $referer = $this->get_referer();
 
@@ -174,7 +174,7 @@ class YouDaoMachineTranslationEngine extends TRP_Machine_Translator
         $is_error       = false;
         $return_message = '';
 
-        if ( YouDaoMachineTranslationEngine::ENGINE_KEY === $translation_engine
+        if ( DeepSeekTranslationEngine::ENGINE_KEY === $translation_engine
             && $this->settings['trp_machine_translation_settings']['machine-translation'] === 'yes') {
 
             if ( isset( $this->correct_api_key ) && $this->correct_api_key != null ) {
@@ -199,8 +199,8 @@ class YouDaoMachineTranslationEngine extends TRP_Machine_Translator
 
     public function get_api_key()
     {
-        return isset( $this->settings['trp_machine_translation_settings'], $this->settings['trp_machine_translation_settings'][YouDaoMachineTranslationEngine::FIELD_API_KEY] )
-            ? $this->settings['trp_machine_translation_settings'][YouDaoMachineTranslationEngine::FIELD_API_KEY] : false;
+        return isset( $this->settings['trp_machine_translation_settings'], $this->settings['trp_machine_translation_settings'][DeepSeekTranslationEngine::FIELD_API_KEY] )
+            ? $this->settings['trp_machine_translation_settings'][DeepSeekTranslationEngine::FIELD_API_KEY] : false;
     }
 
     public function get_api_url()

@@ -81,6 +81,6 @@ DeepSeek翻译API有调用频率和字数限制，具体限制取决于您的API
 
 == Additional Info ==
 
-* 插件主页：https://github.com/hollisho/ho-deepseek-translate-for-translatepress
+* 插件主页：https://github.com/hollisho/ho-deepseek-for-translatepress
 * 开发者主页：https://github.com/hollisho
 * DeepSeek翻译API文档：https://www.deepseek.com/docs

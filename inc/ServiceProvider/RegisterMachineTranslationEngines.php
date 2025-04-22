@@ -2,7 +2,7 @@
 namespace hollisho\translatepress\translate\deepseek\inc\ServiceProvider;
 
 use hollisho\translatepress\translate\deepseek\inc\Base\ServiceProviderInterface;
-use hollisho\translatepress\translate\deepseek\inc\TranslationEngines\YouDaoMachineTranslationEngine;
+use hollisho\translatepress\translate\deepseek\inc\TranslationEngines\DeepSeekTranslationEngine;
 use TRP_Translate_Press;
 
 /**
@@ -28,14 +28,14 @@ class RegisterMachineTranslationEngines implements ServiceProviderInterface
     }
 
     public function add_engine_classes( $classes ){
-        $classes[YouDaoMachineTranslationEngine::ENGINE_KEY] = YouDaoMachineTranslationEngine::class;
+        $classes[DeepSeekTranslationEngine::ENGINE_KEY] = DeepSeekTranslationEngine::class;
         return $classes;
     }
 
     public function add_engine( $engines ){
         $engines[] = [ 
-            'value' => YouDaoMachineTranslationEngine::ENGINE_KEY, 
-            'label' => esc_html(__('YouDao', 'ho-deepseek-translate-for-translatepress')), // translators: translation engine name
+            'value' => DeepSeekTranslationEngine::ENGINE_KEY,
+            'label' => esc_html(__('DeepSeek', 'ho-deepseek-for-translatepress')), // translators: translation engine name
         ];
 
         return $engines;
@@ -52,7 +52,7 @@ class RegisterMachineTranslationEngines implements ServiceProviderInterface
         $translation_engine = $settings['translation-engine'] ?? '';
 
         // Check for API errors.
-        if ( YouDaoMachineTranslationEngine::ENGINE_KEY === $translation_engine ) {
+        if ( DeepSeekTranslationEngine::ENGINE_KEY === $translation_engine ) {
             $trp = TRP_Translate_Press::get_trp_instance();
             $machine_translator = $trp->get_component( 'machine_translator' );
             $api_check = $machine_translator->check_api_key_validity();
@@ -66,7 +66,7 @@ class RegisterMachineTranslationEngines implements ServiceProviderInterface
         $text_input_classes = array(
             'trp-text-input',
         );
-        if ( $show_errors && YouDaoMachineTranslationEngine::ENGINE_KEY === $translation_engine ) {
+        if ( $show_errors && DeepSeekTranslationEngine::ENGINE_KEY === $translation_engine ) {
             $text_input_classes[] = 'trp-text-input-error';
         }
 
@@ -76,13 +76,13 @@ class RegisterMachineTranslationEngines implements ServiceProviderInterface
             <th scope="row">
                 <?php 
                     // translators: input api key
-                    echo esc_html(__('deepseek api key', 'ho-deepseek-translate-for-translatepress')); 
+                    echo esc_html(__('deepseek api key', 'ho-deepseek-for-translatepress'));
                 ?>
             </th>
             <td>
                 <?php
                 // Display an error message above the input.
-                if ( $show_errors && YouDaoMachineTranslationEngine::ENGINE_KEY === $translation_engine ) {
+                if ( $show_errors && DeepSeekTranslationEngine::ENGINE_KEY === $translation_engine ) {
                     ?>
                     <p class="trp-error-inline">
                         <?php echo wp_kses_post( $error_message ); ?>
@@ -91,24 +91,24 @@ class RegisterMachineTranslationEngines implements ServiceProviderInterface
                 }
                 ?>
                 <input type="text" id="trp-deepseek-api-key" class="<?php echo esc_html( implode( ' ', $text_input_classes ) ); ?>"
-                       name="trp_machine_translation_settings[<?php echo esc_attr(YouDaoMachineTranslationEngine::FIELD_API_KEY) ?>]"
-                       value="<?php if( !empty( $settings[YouDaoMachineTranslationEngine::FIELD_API_KEY] ) ) echo esc_attr( $settings[YouDaoMachineTranslationEngine::FIELD_API_KEY]); ?>"/>
+                       name="trp_machine_translation_settings[<?php echo esc_attr(DeepSeekTranslationEngine::FIELD_API_KEY) ?>]"
+                       value="<?php if( !empty( $settings[DeepSeekTranslationEngine::FIELD_API_KEY] ) ) echo esc_attr( $settings[DeepSeekTranslationEngine::FIELD_API_KEY]); ?>"/>
                 <?php
                 // Show error or success SVG.
-                if ( method_exists( $machine_translator, 'automatic_translation_svg_output' ) && YouDaoMachineTranslationEngine::ENGINE_KEY === $translation_engine ) {
+                if ( method_exists( $machine_translator, 'automatic_translation_svg_output' ) && DeepSeekTranslationEngine::ENGINE_KEY === $translation_engine ) {
                     $machine_translator->automatic_translation_svg_output( $show_errors );
                 }
                 ?>
                 <p class="description">
                     <?php 
                         // translators: deepseek api key
-                        echo esc_html(__('key format: app id#app secret#VOCABID(optional)', 'ho-deepseek-translate-for-translatepress')); 
+                        echo esc_html(__('key format: app id#app secret#VOCABID(optional)', 'ho-deepseek-for-translatepress')); 
                     ?>
                 </p>
                 <p class="description">
                     <?php 
                         // translators: visit deepseek api url.
-                        $text = __( 'Visit <a href="%s" target="_blank">this link</a> to see how you can set up an API key and control API costs.', 'ho-deepseek-translate-for-translatepress' );
+                        $text = __( 'Visit <a href="%s" target="_blank">this link</a> to see how you can set up an API key and control API costs.', 'ho-deepseek-for-translatepress' );
                         echo wp_kses( sprintf( $text, 'https://ai.deepseek.com/DOCSIRMA/html/trans/api/plwbfy/index.html' ), [ 'a' => [ 'href' => [], 'target'=> [] ] ] ) 
                     ?>
                 </p>
@@ -120,8 +120,8 @@ class RegisterMachineTranslationEngines implements ServiceProviderInterface
     }
 
     public function sanitize_settings( $settings, $mt_settings ){
-        if( !empty( $mt_settings[YouDaoMachineTranslationEngine::FIELD_API_KEY] ) )
-            $settings[YouDaoMachineTranslationEngine::FIELD_API_KEY] = sanitize_text_field( $mt_settings[YouDaoMachineTranslationEngine::FIELD_API_KEY] );
+        if( !empty( $mt_settings[DeepSeekTranslationEngine::FIELD_API_KEY] ) )
+            $settings[DeepSeekTranslationEngine::FIELD_API_KEY] = sanitize_text_field( $mt_settings[DeepSeekTranslationEngine::FIELD_API_KEY] );
 
         return $settings;
     }
