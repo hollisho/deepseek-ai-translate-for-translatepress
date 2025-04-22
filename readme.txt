@@ -1,4 +1,4 @@
-=== Ho DeepSeek Translate For TranslatePress ===
+=== Ho DeepSeek For TranslatePress ===
 Contributors: hollisho
 Donate link: https://www.1024plus.com/
 Tags: translatepress, deepseek, translate, translation, multilingual
@@ -13,7 +13,7 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
 == Description ==
 
-Ho DeepSeek Translate For TranslatePress 是一个TranslatePress插件的扩展，它为TranslatePress添加了DeepSeek翻译API支持。通过这个插件，您可以使用DeepSeek翻译的API来自动翻译您的WordPress网站内容。
+Ho DeepSeek For TranslatePress 是一个TranslatePress插件的扩展，它为TranslatePress添加了DeepSeek API支持。通过这个插件，您可以使用DeepSeek的API来自动翻译您的WordPress网站内容。
 
 主要特性：
 
@@ -71,16 +71,8 @@ DeepSeek翻译API有调用频率和字数限制，具体限制取决于您的API
 = 1.0.0 =
 * 初始版本发布
 
-= 1.0.1 =
-* DeepSeek js文件bugfix
-
-== Upgrade Notice ==
-
-= 1.0.0 =
-这是插件的第一个版本，建议所有用户安装。
-
 == Additional Info ==
 
 * 插件主页：https://github.com/hollisho/ho-deepseek-for-translatepress
-* 开发者主页：https://github.com/hollisho
-* DeepSeek翻译API文档：https://www.deepseek.com/docs
+* 开发者主页：https://hollisho.github.io/
+* DeepSeek翻译API文档：https://api-docs.deepseek.com/
