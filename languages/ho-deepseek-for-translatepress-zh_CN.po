@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Ho DeepSeek Translate For TranslatePress\n"
 "POT-Creation-Date: 2025-02-19 09:29+0800\n"
-"PO-Revision-Date: 2025-04-22 10:52+0800\n"
+"PO-Revision-Date: 2025-04-22 11:49+0800\n"
 "Last-Translator: Hollis Ho <he_wenzhi@126.com>\n"
 "Language-Team: Hollis Ho (he_wenzhi@126.com)\n"
 "Language: zh_CN\n"
@@ -29,11 +29,11 @@ msgstr ""
 
 #: inc/ServiceProvider/RegisterMachineTranslationEngines.php:38
 msgid "DeepSeek"
-msgstr "深度求索"
+msgstr "DeepSeek"
 
 #: inc/ServiceProvider/RegisterMachineTranslationEngines.php:79
 msgid "deepseek api key"
-msgstr "深度求索 api 密钥"
+msgstr "DeepSeek API 密钥"
 
 #: inc/ServiceProvider/RegisterMachineTranslationEngines.php:105
 msgid "key format: app id#app secret#VOCABID(optional)"

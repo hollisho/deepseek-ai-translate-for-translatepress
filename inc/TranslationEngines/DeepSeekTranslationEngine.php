@@ -29,38 +29,31 @@ class DeepSeekTranslationEngine extends TRP_Machine_Translator
     public function send_request( $source_language, $language_code, $strings_array)
     {
         /* build our translation request */
-        list($app_key, $app_secret) = explode('#', $this->get_api_key());
-        $salt = DeepSeekApiHelper::create_guid();
-        $args = array(
-            'q' => $strings_array,
-            'appKey' => $app_key,
-            'salt' => $salt,
-        );
-        $args['from'] = $source_language;
-        $args['to'] = $language_code;
-        $args['signType'] = 'v3';
-        $curtime = strtotime("now");
-        $args['curtime'] = $curtime;
-        $signStr = $app_key . DeepSeekApiHelper::truncate(implode("", $strings_array)) . $salt . $curtime . $app_secret;
-        $args['sign'] = hash("sha256", $signStr);
-//        $args['vocabId'] = 'your vocab id';
+        $prompt = DeepSeekApiHelper::convert($strings_array, $source_language, $language_code);
 
-        $data = DeepSeekApiHelper::convert($args);
+        $data = [
+            'model' => 'deepseek-chat',
+            'temperature' => 0.3,
+            'messages' => [
+                ['role' => 'user', 'content' => $prompt]
+            ],
+            'max_tokens' => 4000  // 增加token限制以适应长文本
+        ];
 
         $referer = $this->get_referer();
 
         /* Due to url length restrictions we need so send a POST request faked as a GET request and send the strings in the body of the request and not in the URL */
-        $response = wp_remote_post( "{$this->get_api_url()}", array(
+        return wp_remote_post( "{$this->get_api_url()}", array(
                 'method'    => 'POST',
                 'timeout'   => 45,
                 'headers'   => [
                     'Referer'                => $referer,
+                    'Authorization'          => ' Bearer ' . $this->get_api_key(),
+                    'Content-Type'           => 'application/json'
                 ],
                 'body'      => $data,
             )
         );
-
-        return $response;
     }
 
     public function translate_array($new_strings, $target_language_code, $source_language_code)
@@ -205,7 +198,7 @@ class DeepSeekTranslationEngine extends TRP_Machine_Translator
 
     public function get_api_url()
     {
-        return 'https://openapi.deepseek.com/v2/api';
+        return 'https://api.deepseek.com/chat/completions';
     }
 
 }

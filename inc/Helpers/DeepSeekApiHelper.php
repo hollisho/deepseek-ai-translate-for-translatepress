@@ -1,94 +1,103 @@
 <?php
 namespace hollisho\translatepress\translate\deepseek\inc\Helpers;
 
+use Exception;
+
 class DeepSeekApiHelper {
 
-    public static function convert(&$args)
+    const supportedLanguages =  [
+        'ar' => 'Arabic',
+        'bg' => 'Bulgarian',
+        'cs' => 'Czech',
+        'da' => 'Danish',
+        'de' => 'German',
+        'el' => 'Greek',
+        'en' => 'English',
+        'es' => 'Spanish',
+        'et' => 'Estonian',
+        'fi' => 'Finnish',
+        'fr' => 'French',
+        'hu' => 'Hungarian',
+        'id' => 'Indonesian',
+        'it' => 'Italian',
+        'ja' => 'Japanese',
+        'ko' => 'Korean',
+        'lt' => 'Lithuanian',
+        'lv' => 'Latvian',
+        'nb' => 'Norwegian Bokmål',
+        'nl' => 'Dutch',
+        'pl' => 'Polish',
+        'pt' => 'Portuguese',
+        'ro' => 'Romanian',
+        'ru' => 'Russian',
+        'sk' => 'Slovak',
+        'sl' => 'Slovenian',
+        'sv' => 'Swedish',
+        'tr' => 'Turkish',
+        'uk' => 'Ukrainian',
+        'zh-cn' => 'Chinese (simplified)',
+        'zh-tw' => 'Chinese (traditional)',
+
+    ];
+
+    /**
+     * @param $texts
+     * @param $sourceLang
+     * @param $targetLang
+     * @return string
+     * @author Hollis
+     *
+     * $data = [
+     * 'model' => 'deepseek-chat',
+     * 'messages' => [
+     *     ['role' => 'user', 'content' => $prompt]
+     * ],
+     * 'temperature' => 0.3,
+     * 'max_tokens' => 4000  // 增加token限制以适应长文本
+     * ];
+     */
+    public static function convert(&$texts, $sourceLang, $targetLang)
     {
-        $data = '';
-        if (is_array($args))
-        {
-            foreach ($args as $key=>$val)
-            {
-                if (is_array($val))
-                {
-                    foreach ($val as $k=>$v)
-                    {
-                        $data .= 'q='.rawurlencode($v).'&';
-                    }
-                }
-                else
-                {
-                    $data .="$key=".rawurlencode($val)."&";
-                }
+        // 构造批量翻译提示词
+        $itemsList = implode("\n", array_map(function($index, $text) {
+            return ($index + 1) . ". " . $text;
+        }, array_keys($texts), $texts));
+
+        if ($sourceLang === 'auto') {
+            $prompt = "请将以下内容逐条翻译成" . self::supportedLanguages[$targetLang] .
+                "，保持专业语气，并严格按照原格式返回（保留编号）:\n\n" . $itemsList;
+        } else {
+            $prompt = "请将以下" . self::supportedLanguages[$sourceLang] . "内容逐条翻译成" .
+                self::supportedLanguages[$targetLang] .
+                "，保持专业语气，并严格按照原格式返回（保留编号）:\n\n" . $itemsList;
+        }
+        return $prompt;
+    }
+
+
+
+    public static function parseTranslatedItems($content, $expectedCount) {
+        $lines = explode("\n", $content);
+        $items = [];
+
+        foreach ($lines as $line) {
+            // 匹配 "数字. 翻译内容" 格式
+            if (preg_match('/^\s*(\d+)\.\s*(.+?)\s*$/', $line, $matches)) {
+                $index = (int)$matches[1] - 1;  // 转换为0-based索引
+                $items[$index] = $matches[2];
             }
-            return trim($data, "&");
         }
-        return $args;
+
+        // 确保返回的项目数与预期一致
+        if (count($items) !== $expectedCount) {
+            throw new Exception("Translation count mismatch. Expected: $expectedCount, Got: " . count($items));
+        }
+
+        // 按索引排序
+        ksort($items);
+        return array_values($items);
     }
 
-// uuid generator
-    public static function create_guid(){
-        $microTime = microtime();
-        list($a_dec, $a_sec) = explode(" ", $microTime);
-        $dec_hex = dechex($a_dec* 1000000);
-        $sec_hex = dechex($a_sec);
-        self::ensure_length($dec_hex, 5);
-        self::ensure_length($sec_hex, 6);
-        $guid = "";
-        $guid .= $dec_hex;
-        $guid .= self::create_guid_section(3);
-        $guid .= '-';
-        $guid .= self::create_guid_section(4);
-        $guid .= '-';
-        $guid .= self::create_guid_section(4);
-        $guid .= '-';
-        $guid .= self::create_guid_section(4);
-        $guid .= '-';
-        $guid .= $sec_hex;
-        $guid .= self::create_guid_section(6);
-        return $guid;
-    }
-
-    public static function create_guid_section($characters){
-        $return = "";
-        for($i = 0; $i < $characters; $i++)
-        {
-            $return .= dechex(wp_rand(0,15));
-        }
-        return $return;
-    }
-
-    public static function truncate($q) {
-        $len = self::abslength($q);
-        return $len <= 20 ? $q : (mb_substr($q, 0, 10) . $len . mb_substr($q, $len - 10, $len));
-    }
-
-    public static function abslength($str)
-    {
-        if(empty($str)){
-            return 0;
-        }
-        if(function_exists('mb_strlen')){
-            return mb_strlen($str,'utf-8');
-        }
-        else {
-            preg_match_all("/./u", $str, $ar);
-            return count($ar[0]);
-        }
-    }
-
-    public static function ensure_length(&$string, $length){
-        $strlen = strlen($string);
-        if($strlen < $length)
-        {
-            $string = str_pad($string, $length, "0");
-        }
-        else if($strlen > $length)
-        {
-            $string = substr($string, 0, $length);
-        }
-    }
 }
 
 

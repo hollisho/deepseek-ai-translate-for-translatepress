@@ -138,9 +138,9 @@ class RegisterMachineTranslationEngines implements ServiceProviderInterface
      */
     public function configure_api_source_language($source_language, $source_language_code, $target_language_code ){
         $exceptions_source_mapping_codes = array(
-            'zh_HK' => 'zh-CHT',
-            'zh_TW' => 'zh-CHT',
-            'zh_CN' => 'zh-CHS',
+            'zh_HK' => 'zh-tw',
+            'zh_TW' => 'zh-tw',
+            'zh_CN' => 'zh-cn',
             'en_GB' => 'en',
             'en_US' => 'en',
             'en_CA' => 'en',
@@ -165,9 +165,9 @@ class RegisterMachineTranslationEngines implements ServiceProviderInterface
      */
     public function configure_api_target_language($target_language, $source_language_code, $target_language_code ){
         $exceptions_target_mapping_codes = array(
-            'zh_HK' => 'zh-CHT',
-            'zh_TW' => 'zh-CHT',
-            'zh_CN' => 'zh-CHS',
+            'zh_HK' => 'zh-tw',
+            'zh_TW' => 'zh-tw',
+            'zh_CN' => 'zh-cn',
             'en_GB' => 'en',
             'en_US' => 'en',
             'en_CA' => 'en',
