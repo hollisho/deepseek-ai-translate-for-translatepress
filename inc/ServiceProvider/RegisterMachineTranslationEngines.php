@@ -109,7 +109,7 @@ class RegisterMachineTranslationEngines implements ServiceProviderInterface
                     <?php 
                         // translators: visit deepseek api url.
                         $text = __( 'Visit <a href="%s" target="_blank">this link</a> to see how you can set up an API key and control API costs.', 'ho-deepseek-for-translatepress' );
-                        echo wp_kses( sprintf( $text, 'https://ai.deepseek.com/DOCSIRMA/html/trans/api/plwbfy/index.html' ), [ 'a' => [ 'href' => [], 'target'=> [] ] ] ) 
+                        echo wp_kses( sprintf( $text, 'https://ai.deepseek.com' ), [ 'a' => [ 'href' => [], 'target'=> [] ] ] )
                     ?>
                 </p>
             </td>
