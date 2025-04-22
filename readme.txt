@@ -1,6 +1,6 @@
 === Ho DeepSeek For TranslatePress ===
 Contributors: hollisho
-Donate link: https://www.1024plus.com/
+Donate link: https://hollisho.github.io/
 Tags: translatepress, deepseek, translate, translation, multilingual
 Requires at least: 6.0
 Tested up to: 6.7
@@ -39,16 +39,15 @@ Ho DeepSeek For TranslatePress 是一个TranslatePress插件的扩展，它为Tr
 
 == Frequently Asked Questions ==
 
-= 如何获取DeepSeek翻译API密钥？ =
+= 如何获取DeepSeek API密钥？ =
 
-1. 访问[DeepSeek官网](https://www.deepseek.com/)
+1. 访问[DeepSeek开发平台](https://platform.deepseek.com/)
 2. 注册/登录账号
-3. 创建自然语言翻译服务
-4. 获取应用ID和应用密钥
+3. 创建API keys
 
 = 支持哪些语言？ =
 
-插件支持DeepSeek翻译API支持的所有语言，包括但不限于：
+插件支持DeepSeek API支持的所有语言，包括但不限于：
 * 中文（简体）
 * 中文（繁体）
 * 英语
@@ -60,7 +59,15 @@ Ho DeepSeek For TranslatePress 是一个TranslatePress插件的扩展，它为Tr
 
 = 翻译有字数限制吗？ =
 
-DeepSeek翻译API有调用频率和字数限制，具体限制取决于您的API套餐类型。请参考DeepSeek官方文档了解详情。
+DeepSeek API是按token来计费的，并且有token调用频率。请参考DeepSeek官方文档了解详情。
+
+token 是模型用来表示自然语言文本的基本单位，也是我们的计费单元，可以直观的理解为“字”或“词”；通常 1 个中文词语、1 个英文单词、1 个数字或 1 个符号计为 1 个 token。
+
+一般情况下模型中 token 和字数的换算比例大致如下：
+
+1 个英文字符 ≈ 0.3 个 token。
+1 个中文字符 ≈ 0.6 个 token。
+但因为不同模型的分词不同，所以换算比例也存在差异，每一次实际处理 token 数量以模型返回为准，您可以从返回结果的 usage 中查看。
 
 == Screenshots ==
 
