@@ -34,7 +34,7 @@ Ho DeepSeek For TranslatePress 是一个TranslatePress插件的扩展，它为Tr
 2. 在WordPress后台启用插件
 3. 转到TranslatePress > 设置 > 自动翻译页面
 4. 选择"DeepSeek翻译"作为翻译引擎
-5. 输入您的DeepSeek翻译API密钥（格式：应用程序ID#应用程序密钥#VOCABID（可选））
+5. 输入您的DeepSeek翻译API密钥
 6. 保存设置
 
 == Frequently Asked Questions ==
