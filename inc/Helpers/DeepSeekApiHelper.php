@@ -56,12 +56,13 @@ class DeepSeekApiHelper {
      * 'max_tokens' => 4000  // 增加token限制以适应长文本
      * ];
      */
-    public static function convert(&$texts, $sourceLang, $targetLang)
+    public static function convert($texts, $sourceLang, $targetLang)
     {
         // 构造批量翻译提示词
-        $itemsList = implode("\n", array_map(function($index, $text) {
-            return ($index + 1) . ". " . $text;
-        }, array_keys($texts), $texts));
+        $counter = 0;
+        $itemsList = implode("\n", array_map(function($text) use (&$counter) {
+            return (++$counter) . ". " . $text;
+        }, $texts));
 
         if ($sourceLang === 'auto') {
             $prompt = "请将以下内容逐条翻译成" . self::supportedLanguages[$targetLang] .
