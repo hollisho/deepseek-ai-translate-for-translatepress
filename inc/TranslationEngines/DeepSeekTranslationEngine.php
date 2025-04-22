@@ -52,7 +52,7 @@ class DeepSeekTranslationEngine extends TRP_Machine_Translator
                     'Authorization'          => ' Bearer ' . $this->get_api_key(),
                     'Content-Type'           => 'application/json'
                 ],
-                'body'      => $data,
+                'body'      => json_encode($data),
             )
         );
     }
@@ -122,7 +122,7 @@ class DeepSeekTranslationEngine extends TRP_Machine_Translator
 
                     /* if we have strings build the translation strings array and make sure we keep the original keys from $new_string */
                     $translatedContent = ArrayHelper::getValue($translation_response, 'choices.0.message.content', []);
-                    $translatedItems = DeepSeekApiHelper::parseTranslatedItems($translatedContent, count($new_strings_chunk));
+                    $translations = DeepSeekApiHelper::parseTranslatedItems($translatedContent, count($new_strings_chunk));
                     $i = 0;
 
                     foreach ( $new_strings_chunk as $key => $old_string ) {
