@@ -1,0 +1,13 @@
+parameters:
+    ignoreErrors:
+        - '#Unsafe usage of new static\(\)\.#'
+    parallel:
+        jobSize: 20
+        maximumNumberOfProcesses: 16
+        processTimeout: 300.0
+    tmpDir: temp
+    # 等级 0~9, 默认 0
+    level: 3
+    #
+    paths:
+        - src

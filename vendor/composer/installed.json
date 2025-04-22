@@ -1,5 +1,65 @@
 {
-    "packages": [],
+    "packages": [
+        {
+            "name": "hollisho/php-helpers",
+            "version": "v1.1.3",
+            "version_normalized": "1.1.3.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/hollisho/php-helpers.git",
+                "reference": "9ba22c2fe4b87757cfe6c682a4e85ce3e22aa0e4"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/hollisho/php-helpers/zipball/9ba22c2fe4b87757cfe6c682a4e85ce3e22aa0e4",
+                "reference": "9ba22c2fe4b87757cfe6c682a4e85ce3e22aa0e4",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^7.0 || ^8.0"
+            },
+            "require-dev": {
+                "phpstan/phpstan": "^0.9.3 || ^1.9 || ^1.10.28",
+                "phpunit/phpunit": "^6.5 || ^8.5 || ^9.5"
+            },
+            "time": "2025-03-19T02:53:25+00:00",
+            "type": "library",
+            "installation-source": "dist",
+            "autoload": {
+                "psr-4": {
+                    "hollisho\\helpers\\": "src"
+                },
+                "exclude-from-classmap": [
+                    "/tests/"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Hollis Ho",
+                    "email": "he_wenzhi@126.com",
+                    "homepage": "https://www.1024plus.com",
+                    "role": "Developer"
+                }
+            ],
+            "description": "php helpers",
+            "keywords": [
+                "array",
+                "helpers",
+                "php",
+                "signature",
+                "string"
+            ],
+            "support": {
+                "issues": "https://github.com/hollisho/php-helpers/issues",
+                "source": "https://github.com/hollisho/php-helpers/tree/v1.1.3"
+            },
+            "install-path": "../hollisho/php-helpers"
+        }
+    ],
     "dev": true,
     "dev-package-names": []
 }

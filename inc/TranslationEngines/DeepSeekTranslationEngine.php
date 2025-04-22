@@ -1,6 +1,7 @@
 <?php
 namespace hollisho\translatepress\translate\deepseek\inc\TranslationEngines;
 
+use hollisho\helpers\ArrayHelper;
 use hollisho\translatepress\translate\deepseek\inc\Helpers\DeepSeekApiHelper;
 use TRP_Machine_Translator;
 use WP_Error;
@@ -91,22 +92,28 @@ class DeepSeekTranslationEngine extends TRP_Machine_Translator
 
 
                 /**
-                 * {
-                    "translateResults": [
-                    {
-                        "query": "Where are you from ?",
-                        "translation": "¿De dónde eres?",
-                        "type": "en2es"
-                    },
-                    {
-                        "query": "I Love you !",
-                        "translation": "¡Te amo!",
-                        "type": "en2es"
-                    }
+                 *
+
+                {
+                    "id": "930c60df-bf64-41c9-a88e-3ec75f81e00e",
+                    "choices": [
+                        {
+                            "finish_reason": "stop",
+                            "index": 0,
+                            "message": {
+                                "content": "Hello! How can I help you today?",
+                                "role": "assistant"
+                            }
+                        }
                     ],
-                    "requestId": "483d3bc7-ca40-414a-b2e8-88fe59564382",
-                    "errorCode": "0",
-                    "l": "en2es"
+                    "created": 1705651092,
+                    "model": "deepseek-chat",
+                    "object": "chat.completion",
+                    "usage": {
+                        "completion_tokens": 10,
+                        "prompt_tokens": 16,
+                        "total_tokens": 26
+                    }
                 }
                  */
                 $translation_response = json_decode( $response['body'] );
@@ -114,23 +121,22 @@ class DeepSeekTranslationEngine extends TRP_Machine_Translator
                 if ( empty( $translation_response->error ) ) {
 
                     /* if we have strings build the translation strings array and make sure we keep the original keys from $new_string */
-                    $translations = ( empty( $translation_response->translateResults ) ) ? array() : $translation_response->translateResults;
-                    $i            = 0;
+                    $translatedContent = ArrayHelper::getValue($translation_response, 'choices.0.message.content', []);
+                    $translatedItems = DeepSeekApiHelper::parseTranslatedItems($translatedContent, count($new_strings_chunk));
+                    $i = 0;
 
                     foreach ( $new_strings_chunk as $key => $old_string ) {
 
-                        if ( isset( $translations[ $i ] ) && !empty( $translations[ $i ]->translation ) ) {
-                            $translated_strings[ $key ] = $translations[ $i ]->translation;
+                        if ( isset( $translations[ $i ] ) && !empty( $translations[ $i ] ) ) {
+                            $translated_strings[ $key ] = $translations[ $i ];
                         } else {
-                            /*  In some cases when API doesn't have a translation for a particular string,
-                            translation is returned empty instead of same string. Setting original string as translation
-                            prevents TP from keep trying to submit same string for translation endlessly.  */
                             $translated_strings[ $key ] = $old_string;
                         }
 
                         $i++;
 
                     }
+
                 }
 
                 if( $this->machine_translator_logger->quota_exceeded() )

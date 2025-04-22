@@ -13,5 +13,7 @@
             "role": "Developer"
         }
     ],
-    "minimum-stability": "dev"
+    "require": {
+        "hollisho/php-helpers": "^1.1"
+    }
 }

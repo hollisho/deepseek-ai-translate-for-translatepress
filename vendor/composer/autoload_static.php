@@ -10,6 +10,7 @@ class ComposerStaticInit69bef340b5b2220a9e33231f2ea1b3c7
         'h' => 
         array (
             'hollisho\\translatepress\\translate\\deepseek\\inc\\' => 47,
+            'hollisho\\helpers\\' => 17,
         ),
     );
 
@@ -17,6 +18,10 @@ class ComposerStaticInit69bef340b5b2220a9e33231f2ea1b3c7
         'hollisho\\translatepress\\translate\\deepseek\\inc\\' => 
         array (
             0 => __DIR__ . '/../..' . '/inc',
+        ),
+        'hollisho\\helpers\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/hollisho/php-helpers/src',
         ),
     );
 

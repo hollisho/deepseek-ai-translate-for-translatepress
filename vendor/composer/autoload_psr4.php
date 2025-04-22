@@ -7,4 +7,5 @@ $baseDir = dirname($vendorDir);
 
 return array(
     'hollisho\\translatepress\\translate\\deepseek\\inc\\' => array($baseDir . '/inc'),
+    'hollisho\\helpers\\' => array($vendorDir . '/hollisho/php-helpers/src'),
 );

@@ -1,0 +1,44 @@
+{
+  "name": "hollisho/php-helpers",
+  "type": "library",
+  "description": "php helpers",
+  "keywords": [
+    "helpers",
+    "php",
+    "array",
+    "string",
+    "signature"
+  ],
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Hollis Ho",
+      "email": "he_wenzhi@126.com",
+      "homepage": "https://www.1024plus.com",
+      "role": "Developer"
+    }
+  ],
+  "require-dev": {
+    "phpstan/phpstan": "^0.9.3 || ^1.9 || ^1.10.28",
+    "phpunit/phpunit": "^6.5 || ^8.5 || ^9.5"
+  },
+  "require": {
+    "php": "^7.0 || ^8.0"
+  },
+  "autoload": {
+    "psr-4": {
+      "hollisho\\helpers\\": "src"
+    },
+    "exclude-from-classmap": [
+      "/tests/"
+    ]
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "hollisho\\phpHelperTests\\": "tests/"
+    },
+    "exclude-from-classmap": [
+      "/tests/"
+    ]
+  }
+}
