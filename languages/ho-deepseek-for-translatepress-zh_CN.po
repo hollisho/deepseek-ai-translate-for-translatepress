@@ -1,0 +1,401 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Ho YouDao Translate For TranslatePress\n"
+"POT-Creation-Date: 2025-02-19 09:29+0800\n"
+"PO-Revision-Date: 2025-02-19 09:30+0800\n"
+"Last-Translator: Hollis Ho <he_wenzhi@126.com>\n"
+"Language-Team: Hollis Ho (he_wenzhi@126.com)\n"
+"Language: zh_CN\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Poedit 3.4.2\n"
+"X-Poedit-Basepath: ..\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;"
+"esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;_n_noop:1,2;"
+"_nx_noop:3c,1,2;__ngettext_noop:1,2\n"
+"X-Poedit-SearchPath-0: .\n"
+
+#: ho-deepseek-translate-for-translatepress.php:31
+#, php-format
+msgid ""
+"YouDao Translate For TranslatePress deepseek need PHP %1$s. Your current PHP "
+"version is %2$s. Please upgrade to PHP to %1$s or a newer version, otherwise "
+"the plugin will have no effect."
+msgstr ""
+"YouDao Translate For TranslatePress YouDao需要PHP %1$s。您当前的PHP版本为 "
+"%2$s。请升级到PHP到 %1$s 或更新版本，否则插件将无效。"
+
+#: inc/ServiceProvider/RegisterMachineTranslationEngines.php:38
+msgid "YouDao"
+msgstr "有道翻译v2"
+
+#: inc/ServiceProvider/RegisterMachineTranslationEngines.php:79
+msgid "deepseek api key"
+msgstr "有道 api 密钥"
+
+#: inc/ServiceProvider/RegisterMachineTranslationEngines.php:105
+msgid "key format: app id#app secret#VOCABID(optional)"
+msgstr "密钥格式：应用程序 ID#应用程序密钥#VOCABID（可选）"
+
+#: inc/ServiceProvider/RegisterMachineTranslationEngines.php:111
+#, php-format
+msgid ""
+"Visit <a href=\"%s\" target=\"_blank\">this link</a> to see how you can set "
+"up an API key and control API costs."
+msgstr ""
+"访问 <a href=\"%s\" target=\"_blank\">此链接</a> ，了解如何设置 API 密钥并控"
+"制 API 成本。"
+
+#~ msgid "WeChat Pay"
+#~ msgstr "微信支付"
+
+#~ msgid "WeChat Pay payment gateway for WooCommerce"
+#~ msgstr "WooCommerce的微信支付支付网关"
+
+#~ msgid "Enable / Disable"
+#~ msgstr "启用/停用"
+
+#~ msgid "Enable this payment gateway"
+#~ msgstr "启用此付款网关"
+
+#~ msgid ""
+#~ "Enable auto login in wechat Official Accounts (此功能将被弃用，不建议使用)"
+#~ msgstr "启动在微信中自动登录 (此功能将被弃用，不建议使用)"
+
+#~ msgid "Title"
+#~ msgstr "标题"
+
+#~ msgid "Wechatpay"
+#~ msgstr "微信支付"
+
+#~ msgid "Description"
+#~ msgstr "描述"
+
+#~ msgid "Pay securely using WeChat Pay"
+#~ msgstr "使用微信支付安全快捷的支付"
+
+#~ msgid "Order Number Prefix"
+#~ msgstr "订单号前缀"
+
+#~ msgid "Only alphabet or number Allowed"
+#~ msgstr "仅允许字母或数字"
+
+#~ msgid "WC-"
+#~ msgstr "WC-"
+
+#~ msgid "WeChat Official Account Developer ID(AppID)"
+#~ msgstr "微信公众号开发者ID（AppID）"
+
+#~ msgid ""
+#~ "Enter your WeChat Official Account Developer ID(AppID). Setup and obtain "
+#~ "it in \"Settings and Development > Basic configuration\"."
+#~ msgstr ""
+#~ "输入您的微信公众号开发者ID(AppID)，在“设置和开发>基本配置”中设置并获取。"
+
+#~ msgid "WeChat Official Account Developer Password(AppSecret)"
+#~ msgstr "微信公众号开发者密码(AppSecret)"
+
+#~ msgid ""
+#~ "Enter your WeChat Official Account Developer Password(AppSecret). Setup "
+#~ "and obtain it in \"Settings and Development > Basic configuration\"."
+#~ msgstr ""
+#~ "输入您的微信公众号开发者密码(AppSecret)，在“设置和开发>基本配置”中设置并获"
+#~ "取。"
+
+#~ msgid "WeChat miniApp AppID(小程序ID)"
+#~ msgstr "微信小程序AppID(小程序ID)"
+
+#~ msgid ""
+#~ "Enter your WeChat MiniApp AppId. Setup and obtain it in 「开发 > 开发管理 "
+#~ "> 开发设置」。"
+#~ msgstr ""
+#~ "输入您的微信小程序AppID，在「开发 > 开发管理 > 开发设置」页面中获取。"
+
+#~ msgid "WeChat MiniApp AppSecret(小程序密钥)"
+#~ msgstr "微信小程序AppSecret(小程序密钥)"
+
+#~ msgid ""
+#~ "Enter your WeChat MiniApp AppSecret. Setup and obtain it in 「开发 > 开发"
+#~ "管理 > 开发设置」。"
+#~ msgstr "输入您的微信AppSecret，在「开发 > 开发管理 > 开发设置」页面中获取。"
+
+#~ msgid "WeChatPay Mch Id"
+#~ msgstr "微信支付商户ID"
+
+#, php-format
+#~ msgid ""
+#~ "Enter your WeChatPay Mch Id. obtain it in <a target=_blank "
+#~ "href=\"%s\">here</a>."
+#~ msgstr "输入微信支付商户号。在<a target=_blank href=\"%s\">这里</a>获取。"
+
+#~ msgid "WeChatPay APIv2 Secret"
+#~ msgstr "微信支付 APIv2 密钥"
+
+#, php-format
+#~ msgid ""
+#~ "Enter your WeChatPay APIv2 Secret that Setup in <a target=_blank "
+#~ "href=\"%s\">here</a>。支付授权目录和 H5 支付域名为： %s, 扫码回调链接为: "
+#~ "%s."
+#~ msgstr ""
+#~ "输入微信支付APIv2密钥，在<a target=_blank href=\"%s\">这里</a>设置。支付授"
+#~ "权目录和 H5 支付域名为：<code>%s</code>,  <code>扫码回调链接为: %s</"
+#~ "code>。"
+
+#~ msgid "apiclient_cert.pem path"
+#~ msgstr "apiclient_cert.pem 路径"
+
+#, php-format
+#~ msgid ""
+#~ "Enter the absolute path of apiclient_cert.pem file that can access by the "
+#~ "site, used by refund action。<br/>Ex: <code>/home/apiclient_cert.pem</"
+#~ "code>，For security *DO NOT* place it in public dir. Setup in <a "
+#~ "target=_blank href=\"%s\">here</a>"
+#~ msgstr ""
+#~ "输入退款时使用的 apiclient_cert.pem 文件的绝对路径，确保 Web 服务器程序可"
+#~ "以正常访问该路径.<br/> 如： <code>/home/apiclient_cert.pem</code>，安全起"
+#~ "见，请**不要** 把该文件放在公共目录。<a target=_blank href=\"%s\">在这里</"
+#~ "a>设置和获取 apiclient_cert.pem 文件。"
+
+#~ msgid "apiclient_key.pem Path"
+#~ msgstr "apiclient_key.pem 路径"
+
+#, php-format
+#~ msgid ""
+#~ "Enter the absolute path of apiclient_key.pem file that can access by the "
+#~ "site, used by refund action. <br/>Ex: <code>/home/apiclient_key.pem</"
+#~ "code>，For security *DO NOT* place it in public dir. Setup in <a "
+#~ "target=_blank href=\"%s\">here</a>"
+#~ msgstr ""
+#~ "输入退款时使用的 apiclient_key.pem 文件的绝对路径，确保 Web 服务器程序可以"
+#~ "正常访问该路径.<br/> 如： <code>/home/apiclient_key.pem</code>，安全起见，"
+#~ "请**不要** 把该文件放在公共目录。<a target=_blank href=\"%s\">在这里</a>设"
+#~ "置和获取 apiclient_key.pem 文件。"
+
+#~ msgid "Debug Mode"
+#~ msgstr "调试模式"
+
+#~ msgid "Enable debug mod"
+#~ msgstr "启用调试模式"
+
+#~ msgid "If checked, plugin will show program errors in frontend."
+#~ msgstr "如果启用，会在前端显示详情的错误信息。"
+
+#~ msgid "Checkout Style"
+#~ msgstr "结帐样式"
+
+#~ msgid "Show qrcode in modal"
+#~ msgstr "在模态窗口中显示二维码"
+
+#~ msgid "Show qrcode in page"
+#~ msgstr "在页面中显示二维码"
+
+#~ msgid "Exchange Rate"
+#~ msgstr "汇率"
+
+#, php-format
+#~ msgid ""
+#~ "Please set the %s against Chinese Yuan exchange rate, eg if your currency "
+#~ "is US Dollar, then you should enter 6.19"
+#~ msgstr "请设置 %s 转人民币的汇率，例如您的商店货币时美元，请填写 6.19"
+
+#~ msgid "Settings"
+#~ msgstr "设置"
+
+#~ msgid "Return to payments"
+#~ msgstr "返回付款页面"
+
+#~ msgid "Calling WeChat Pay, please wait a moment..."
+#~ msgstr "正在拉起微信支付，请稍候..."
+
+#, php-format
+#~ msgid "Pay for order %1$s at %2$s"
+#~ msgstr "支付网站「%2$s」中的订单：%1$s "
+
+#~ msgid "WeChat payment configuration error, please contact us."
+#~ msgstr "微信支付配置错误，请联系我们。"
+
+#, php-format
+#~ msgid "Refunded %1$s"
+#~ msgstr "退款 %1$s"
+
+#, php-format
+#~ msgid "Wechatpay payment complete (Transaction ID: %s)"
+#~ msgstr "微信支付已完成(微信订单号: %s)"
+
+#~ msgid "Please scan the QR code with WeChat to finish the payment."
+#~ msgstr "请使用微信扫描二维码完成支付。"
+
+#~ msgid "Wechat auth failed, please try again later or contact us."
+#~ msgstr "微信授权错误，请稍后重试或联系我们。"
+
+#~ msgid "request failed, please try again"
+#~ msgstr "请求失败，请重试"
+
+#, php-format
+#~ msgid ""
+#~ "Wenprise WeChatPay Payment Gateway For WooCommerce 需要 PHP %1$s 以上版本"
+#~ "才能运行，您当前的 PHP 版本为 %2$s， 请升级到 PHP 到 %1$s 或更新的版本， "
+#~ "否则插件没有任何作用。"
+#~ msgstr ""
+#~ "Wenprise WeChatPay Payment Gateway For WooCommerce 需要 PHP %1$s 以上版本"
+#~ "才能运行，您当前的 PHP 版本为 %2$s， 请升级到 PHP 到 %1$s 或更新的版本， "
+#~ "否则插件没有任何作用。"
+
+#, fuzzy
+#~| msgid "Wechat Api Key"
+#~ msgid "WeChat Api Key"
+#~ msgstr "微信 Api Key"
+
+#~| msgid "Wechat App Id"
+#~ msgid "WeChat App Id"
+#~ msgstr "WeChat App Id"
+
+#~| msgid ""
+#~| "Enter your Wechat App Id. Setup and obtain it in 「开发 > 基本配置」。"
+#~ msgid ""
+#~ "Enter your WeChat App Id. Setup and obtain it in 「开发 > 基本配置」。"
+#~ msgstr "输入您的微信APP ID，设置并在「开发>基本配置“中获取。"
+
+#, fuzzy
+#~| msgid ""
+#~| "Enter your Wechat App Secret. Setup and obtain it in 「开发 > 基本配"
+#~| "置」。"
+#~ msgid ""
+#~ "Enter your WeChat App Secret. Setup and obtain it in 「开发 > 基本配置」。"
+#~ msgstr "输入您的微信应用密钥，在微信公众号的「开发 > 基本配置」页面中获取。"
+
+#~ msgid "Proceed to Wechatpay"
+#~ msgstr "前往微信支付"
+
+#~ msgid "Enable auto login in wechat Official Accounts"
+#~ msgstr "在微信中打开时自动登录"
+
+#, php-format
+#~ msgid ""
+#~ "Enter your Wechat Api Key that Setup in <a target=_blank "
+#~ "href=\"%s\">here</a>，支付授权目录和 H5 支付域名为： %s, 扫码回调链接为: "
+#~ "%s"
+#~ msgstr ""
+#~ "输入微信 API 密钥，在<a target=_blank href=\"%s\">这里</a>设置，支付授权目"
+#~ "录和 H5 支付域名为： %s, 扫码回调链接为: %s"
+
+#, php-format
+#~ msgid ""
+#~ "Enter your Wechat Api Key that Setup in <a target=_blank "
+#~ "href=\"%s\">here</a>"
+#~ msgstr "输入微信 Api Key，<a target=_blank href=\"%s\">在这里</a>设置和获取"
+
+#, php-format
+#~ msgid ""
+#~ "Enter your Wechat App Id. Setup and obtain it in 「开发 > 基本配置」支付授"
+#~ "权目录和 H5 支付域名为: <code>%s</code>，扫码回调链接为: <code>%s</code>"
+#~ msgstr ""
+#~ "输入微信应用 ID. 在微信公众号的「开发 > 基本配置」中获取。支付授权目录和 "
+#~ "H5 支付域名为: <code>%s</code>，扫码回调链接为: <code>%s</code>"
+
+#~ msgid "Enter your Wechat App Secret."
+#~ msgstr "输入微信公众号 App 密钥。"
+
+#, php-format
+#~ msgid ""
+#~ "Enter the absolute path of apiclient_cert.pem file that can access by the "
+#~ "site, used by refund action, Ex: <code>/home/apiclient_cert.pem</code>，"
+#~ "For security *DO NOT* place it in public dir. Setup in <a target=_blank "
+#~ "href=\"%s\">here</a>"
+#~ msgstr ""
+#~ "输入退款时使用的 apiclient_cert.pem 文件的绝对路径，确保 Web 服务器程序可"
+#~ "以正常访问该路径，Ex： <code>/home/apiclient_cert.pem</code>，安全起见，请"
+#~ "**不要** 把该文件放在公共目录。<a target=_blank href=\"%s\">在这里</a>设置"
+#~ "和获取 apiclient_cert.pem 文件。"
+
+#, php-format
+#~ msgid ""
+#~ "Enter the absolute path of apiclient_key.pem file that can access by the "
+#~ "site, used by refund action，Ex: <code>/home/apiclient_key.pem</code>，"
+#~ "For security *DO NOT* place it in public dir. Setup in <a target=_blank "
+#~ "href=\"%s\">here</a>"
+#~ msgstr ""
+#~ "输入退款时使用的 apiclient_key.pem 文件的绝对路径，确保 Web 服务器程序可以"
+#~ "正常访问该路径，Ex： <code>/home/apiclient_key.pem</code>，安全起见，请**"
+#~ "不要** 把该文件放在公共目录。<a target=_blank href=\"%s\">在这里</a>设置和"
+#~ "获取 apiclient_key.pem 文件。"
+
+#~ msgid "Enter your Wechat Mch Id."
+#~ msgstr "输入微信商户 ID。"
+
+#~ msgid "Enter your Wechat Api Key"
+#~ msgstr "输入微信支付应用密钥"
+
+#~ msgid ""
+#~ "Enter the absolute apiclient_cert.pem path that can access by the site, "
+#~ "Used when refund, Ex: /home/apiclient_cert.pem，For security *DO NOT* "
+#~ "place it in public dir"
+#~ msgstr ""
+#~ "输入站点可以访问的 apiclient_cert.pem 的绝对路径，退款时使用，例如：/home/"
+#~ "apiclient_cert.pem，安全起见，*不要* 把证书放在用户可访问的网站目录。"
+
+#~ msgid ""
+#~ "Enter the absolute apiclient_key.pem path that can access by the site, "
+#~ "Used when refund，Ex: /home/apiclient_key.pem，For security *DO NOT* "
+#~ "place it in public dir"
+#~ msgstr ""
+#~ "输入站点可以访问的 apiclient_key.pem 的绝对路径，退款时使用，例如：/home/"
+#~ "apiclient_key.pem，安全起见，*不要* 把证书放在用户可访问的网站目录。"
+
+#~ msgid "Pay for order "
+#~ msgstr "支付订单"
+
+#~ msgid " At "
+#~ msgstr "在"
+
+#~ msgid "Enter your Wechat App Id."
+#~ msgstr "输入微信公众号 App ID。"
+
+#~ msgid "Check for updates"
+#~ msgstr "检查更新"
+
+#~ msgid "View details"
+#~ msgstr "查看详情"
+
+#, php-format
+#~ msgid "More information about %s"
+#~ msgstr "有关 %s的更多信息"
+
+#, php-format
+#~ msgctxt "the plugin title"
+#~ msgid "The %s plugin is up to date."
+#~ msgstr "插件 %s 已更新。"
+
+#, php-format
+#~ msgctxt "the plugin title"
+#~ msgid "A new version of the %s plugin is available."
+#~ msgstr "您的插件 %s 有新版本可用。"
+
+#, php-format
+#~ msgctxt "the plugin title"
+#~ msgid "Could not determine if updates are available for %s."
+#~ msgstr "无法确定%s是否有更新。"
+
+#, php-format
+#~ msgid "Unknown update checker status \"%s\""
+#~ msgstr "未知的更新检查程序状态 \"%s\""
+
+#~ msgid "There is no changelog available."
+#~ msgstr "没有可用的更新日志。"
+
+#~ msgid " Wechatpay Sanbox Mode"
+#~ msgstr " 微信沙箱模式"
+
+#~ msgid "Enable Wechatpay Sanbox Mode"
+#~ msgstr "启用微信付费沙箱模式"
+
+#~ msgid ""
+#~ "Wechatpay sandbox can be used to test payments. Sign up for an account <a "
+#~ "href=\"%s\">here</a>"
+#~ msgstr "微信支付沙箱可用于测试付款。在<href=\" %s\" >这里</a>注册一个帐户"
+
+#~ msgid "Shipping Fee"
+#~ msgstr "快递费"

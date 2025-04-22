@@ -1,0 +1,17 @@
+{
+    "name": "hollisho/translatepress-deepseek",
+    "autoload": {
+        "psr-4": {
+            "hollisho\\translatepress\\translate\\deepseek\\inc\\": "inc/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Hollis Ho",
+            "email": "hollis8808@gmail.com",
+            "homepage": "https://www.1024plus.com",
+            "role": "Developer"
+        }
+    ],
+    "minimum-stability": "dev"
+}
