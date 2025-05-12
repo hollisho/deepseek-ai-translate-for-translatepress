@@ -89,10 +89,6 @@ class DeepSeekApiHelper {
             }
         }
 
-        // 确保返回的项目数与预期一致
-        if (count($items) !== $expectedCount) {
-            throw new Exception("Translation count mismatch. Expected: $expectedCount, Got: " . count($items));
-        }
 
         // 按索引排序
         ksort($items);
