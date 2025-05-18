@@ -80,6 +80,6 @@ token 是模型用来表示自然语言文本的基本单位，也是我们的�
 
 == Additional Info ==
 
-* 插件主页：https://github.com/hollisho/ho-deepseek-for-translatepress
+* 插件主页：https://github.com/hollisho/deepseek-ai-translate-for-translatepress
 * 开发者主页：https://hollisho.github.io/
 * DeepSeek翻译API文档：https://api-docs.deepseek.com/
