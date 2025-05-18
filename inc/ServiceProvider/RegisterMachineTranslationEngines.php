@@ -35,7 +35,7 @@ class RegisterMachineTranslationEngines implements ServiceProviderInterface
     public function add_engine( $engines ){
         $engines[] = [ 
             'value' => DeepSeekTranslationEngine::ENGINE_KEY,
-            'label' => esc_html(__('DeepSeek', 'ho-deepseek-for-translatepress')), // translators: translation engine name
+            'label' => esc_html(__('DeepSeek', 'deepseek-ai-translator-for-translatepress')), // translators: translation engine name
         ];
 
         return $engines;
@@ -76,7 +76,7 @@ class RegisterMachineTranslationEngines implements ServiceProviderInterface
             <th scope="row">
                 <?php 
                     // translators: input api key
-                    echo esc_html(__('deepseek api key', 'ho-deepseek-for-translatepress'));
+                    echo esc_html(__('deepseek api key', 'deepseek-ai-translator-for-translatepress'));
                 ?>
             </th>
             <td>
@@ -102,13 +102,13 @@ class RegisterMachineTranslationEngines implements ServiceProviderInterface
                 <p class="description">
                     <?php 
                         // translators: deepseek api key
-                        echo esc_html(__('key format: app id#app secret#VOCABID(optional)', 'ho-deepseek-for-translatepress')); 
+                        echo esc_html(__('key format: app id#app secret#VOCABID(optional)', 'deepseek-ai-translator-for-translatepress'));
                     ?>
                 </p>
                 <p class="description">
                     <?php 
                         // translators: visit deepseek api url.
-                        $text = __( 'Visit <a href="%s" target="_blank">this link</a> to see how you can set up an API key and control API costs.', 'ho-deepseek-for-translatepress' );
+                        $text = __( 'Visit <a href="%s" target="_blank">this link</a> to see how you can set up an API key and control API costs.', 'deepseek-ai-translator-for-translatepress' );
                         echo wp_kses( sprintf( $text, 'https://ai.deepseek.com' ), [ 'a' => [ 'href' => [], 'target'=> [] ] ] )
                     ?>
                 </p>
