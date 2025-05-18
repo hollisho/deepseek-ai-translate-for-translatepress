@@ -1,11 +1,11 @@
 <?php
 /**
- * Plugin Name: DeepSeek AI Translator for TranslatePress
+ * Plugin Name: DeepSeek AI Translate for TranslatePress
  * Description: A lightweight PHP tool to supercharge TranslatePress (WordPress multilingual plugin) with DeepSeek AI's advanced translation API
  * Version: 1.0.0
  * Author: Hollis Ho
  * Author URI: https://github.com/hollisho
- * Text Domain: deepseek-ai-translator-for-translatepress
+ * Text Domain: deepseek-ai-translate-for-translatepress
  * Domain Path: /languages
  * Requires PHP: 7.2
  * Requires at least: 6.0
@@ -30,7 +30,7 @@ if ( PHP_VERSION_ID < 70200 ) {
 		{
 			// translators: %1$s is the minimum PHP version required, %2$s is the current PHP version.
 			$text = __( 'DeepSeek For TranslatePress need PHP %1$s. Your current PHP version is %2$s. Please upgrade to PHP to %1$s or a newer version, otherwise the plugin will have no effect.',
-			'deepseek-ai-translator-for-translatepress' );
+			'deepseek-ai-translate-for-translatepress' );
 			printf( '<div class="error"><p>' . esc_html( $text ) . '</p></div>',
 				'7.2.0', PHP_VERSION );
 		} );
@@ -52,7 +52,7 @@ if (file_exists(dirname(__FILE__) . '/vendor/autoload.php')) {
 
 if (class_exists(Init::class)) {
     add_action( 'plugins_loaded', function () {
-		load_plugin_textdomain( 'deepseek-ai-translator-for-translatepress', false, dirname( plugin_basename( __FILE__ ) ) . '/languages' );
+		load_plugin_textdomain( 'deepseek-ai-translate-for-translatepress', false, dirname( plugin_basename( __FILE__ ) ) . '/languages' );
 		Init::registerService();
 	}, -999 );
 }
