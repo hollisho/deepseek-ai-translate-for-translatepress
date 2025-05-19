@@ -1,4 +1,4 @@
-=== DeepSeek AI Translate for TranslatePress ===
+=== Hollisho Integration with DeepSeek for TranslatePress ===
 Contributors: hollisho
 Donate link: https://hollisho.github.io/
 Tags: translatepress, deepseek, translate, translation, multilingual
@@ -13,7 +13,7 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
 == Description ==
 
-DeepSeek AI Translate for TranslatePress 是一个TranslatePress插件的扩展，它为TranslatePress添加了DeepSeek API支持。通过这个插件，您可以使用DeepSeek的API来自动翻译您的WordPress网站内容。
+Hollisho Integration with DeepSeek for TranslatePress 是一个TranslatePress插件的扩展，它为TranslatePress添加了DeepSeek API支持。通过这个插件，您可以使用DeepSeek的API来自动翻译您的WordPress网站内容。
 
 主要特性：
 
