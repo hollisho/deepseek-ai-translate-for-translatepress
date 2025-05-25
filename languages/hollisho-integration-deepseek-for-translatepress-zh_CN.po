@@ -35,10 +35,6 @@ msgstr "DeepSeek"
 msgid "deepseek api key"
 msgstr "DeepSeek API 密钥"
 
-#: inc/ServiceProvider/RegisterMachineTranslationEngines.php:105
-msgid "key format: app id#app secret#VOCABID(optional)"
-msgstr "密钥格式：应用程序 ID#应用程序密钥#VOCABID（可选）"
-
 #: inc/ServiceProvider/RegisterMachineTranslationEngines.php:111
 #, php-format
 msgid ""

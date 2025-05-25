@@ -101,15 +101,9 @@ class RegisterMachineTranslationEngines implements ServiceProviderInterface
                 ?>
                 <p class="description">
                     <?php 
-                        // translators: deepseek api key
-                        echo esc_html(__('key format: app id#app secret#VOCABID(optional)', 'hollisho-integration-deepseek-for-translatepress'));
-                    ?>
-                </p>
-                <p class="description">
-                    <?php 
                         // translators: visit deepseek api url.
                         $text = __( 'Visit <a href="%s" target="_blank">this link</a> to see how you can set up an API key and control API costs.', 'hollisho-integration-deepseek-for-translatepress' );
-                        echo wp_kses( sprintf( $text, 'https://ai.deepseek.com' ), [ 'a' => [ 'href' => [], 'target'=> [] ] ] )
+                        echo wp_kses( sprintf( $text, 'https://api-docs.deepseek.com/' ), [ 'a' => [ 'href' => [], 'target'=> [] ] ] )
                     ?>
                 </p>
             </td>
