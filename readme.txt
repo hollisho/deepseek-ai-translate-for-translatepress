@@ -1,11 +1,11 @@
 === Hollisho Integration with DeepSeek for TranslatePress ===
 Contributors: hollisho
-Donate link: https://hollisho.github.io/
+Donate link: https://www.paypal.com/paypalme/hollisho8808
 Tags: translatepress, deepseek, translate, translation, multilingual
 Requires at least: 6.0
 Tested up to: 6.8
 Requires PHP: 7.2
-Stable tag: 1.0.0
+Stable tag: 1.0.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -77,6 +77,13 @@ token 是模型用来表示自然语言文本的基本单位，也是我们的�
 
 = 1.0.0 =
 * 初始版本发布
+
+= 1.0.1 =
+* 支持所有语言
+
+
+== Donate ==
+如果您愿意支持开发，请访问 [捐赠页面](https://www.1024plus.com/weixin-donate.png) 扫码赞助。
 
 == Additional Info ==
 

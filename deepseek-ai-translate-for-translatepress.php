@@ -2,7 +2,7 @@
 /**
  * Plugin Name: Hollisho Integration with DeepSeek for TranslatePress
  * Description: A lightweight PHP tool to supercharge TranslatePress (WordPress multilingual plugin) with DeepSeek AI's advanced translation API
- * Version: 1.0.0
+ * Version: 1.0.1
  * Author: Hollis Ho
  * Author URI: https://github.com/hollisho
  * Text Domain: hollisho-integration-deepseek-for-translatepress

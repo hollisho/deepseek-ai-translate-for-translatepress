@@ -4,7 +4,7 @@ namespace hollisho\translatepress\translate\deepseek\inc\Base;
 
 class Common
 {
-    const HO_PLUGIN_VERSION = '1.0.0';
+    const HO_PLUGIN_VERSION = '1.0.1';
 
     const HO_PLUGIN_ID = 'hollisho-integration-deepseek-for-translatepress';
 

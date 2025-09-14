@@ -144,6 +144,9 @@ class RegisterMachineTranslationEngines implements ServiceProviderInterface
         );
         if ( isset( $exceptions_source_mapping_codes[$source_language_code] ) ){
             $source_language = $exceptions_source_mapping_codes[$source_language_code];
+        } else {
+            $localeParts = explode('_', $source_language_code);
+            $source_language = $localeParts[0];
         }
 
         return $source_language;
@@ -171,6 +174,9 @@ class RegisterMachineTranslationEngines implements ServiceProviderInterface
         );
         if ( isset( $exceptions_target_mapping_codes[$target_language_code] ) ){
             $target_language = $exceptions_target_mapping_codes[$target_language_code];
+        } else {
+            $localeParts = explode('_', $target_language_code);
+            $target_language = $localeParts[0];
         }
 
         return $target_language;
